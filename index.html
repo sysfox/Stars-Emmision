@@ -112,47 +112,6 @@
 
     },
   }
-
-  var text, gui, config,BgControl, BgColor,color1Control,color2Control,speedControl,PointsControl,RangeControl,SizeControl,DirControl,RangeControl;
-  /**window.onload = function() {
-    gui = new dat.GUI();
-
-  //folder1
-  var folder1 = gui.addFolder('Controls');
-
-  BgControl = folder1.addColor(options, 'Background');
-  BgControl.onChange(draw);
-
-  color1Control = folder1.addColor(options, 'Color1');
-  color1Control.onChange(draw);
-
-  color2Control = folder1.addColor(options, 'Color2');
-  color2Control.onChange(draw);
-
-  RangeControl = folder1.add(options, 'Range',0,400);
-  RangeControl.onChange(draw);
-
-  speedControl = folder1.add(options, 'Speed',10,40);
-  speedControl.onChange(setup);
-
-  PointsControl = folder1.add(options, 'Counts',100,4000);
-  PointsControl.onChange(setup);
-
-  SizeControl = folder1.add(options, 'Size',1,15);
-  SizeControl.onChange(setup);
-
-  DirControl = folder1.add(options, 'Direction',['Center-Outward',  'Center-Inward','Left','Right','Up','Down'] );
-  DirControl.onChange(setup);
-
-  var RandomControl = folder1.add(options, 'Random');
-
-  var SaveControl = folder1.add(options, 'Save');
-
-  folder1.open();
-
-};
-**/
-
 //rgb to hex颜色转换
 function componentToHex(c) {
   var hex = c.toString(16);
@@ -162,12 +121,8 @@ function componentToHex(c) {
 function rgbToHex(r, g, b) {
   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
-
-
 </script>
-
 <script type="text/javascript" src="js/sketch.js"></script>
 </body>
-
 </html>
 
