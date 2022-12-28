@@ -234,7 +234,12 @@ a:active {
   color: white;
 }
 .first-text {
-  display:grid;
-  place-items: center;
-  color:#ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 45px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 61px;
+  font-weight: bold;
 }
