@@ -187,3 +187,8 @@ a:active {
 .icon-pinterest:before {
   content: "\ead1";
 }
+.first-text {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
