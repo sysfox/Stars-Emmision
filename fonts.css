@@ -234,7 +234,7 @@ a:active {
   color: white;
 }
 .first-text {
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  display:grid;
+  place-items: center;
+  color:#ffffff;
 }
