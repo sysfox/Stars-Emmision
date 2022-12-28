@@ -76,7 +76,6 @@
 <body>
 
 <script type="text/javascript">
-
   var type;
   var options ={  
     Background :'#0A0A0A',
@@ -87,29 +86,21 @@
     Counts : 3432,
     Size : 5,
     Direction: 'Center-Outward',
-
     Random: function () { 
       var Color1 = random(['#3370ff','#ff3389','#27ff6e','#27f7ff']); 
       color1Control.setValue(Color1);
-
       var Color2 = random(['#3370ff','#ff3389','#27ff6e','#27f7ff']);  
       color2Control.setValue(Color2);   
-
       var speed = random(10,30);
       speedControl.setValue(speed);
-
       var range = random(100);
       RangeControl.setValue(range);
-
       var points = random(300,2000);
       PointsControl.setValue(points);
-
       var Size = random(1,10);
       SizeControl.setValue(Size);
-
       var Direction = random( ['Center-Outward', 'Center-Inward','Left','Right','Up','Down'] );  
       DirControl.setValue(Direction);   
-
     },
   }
 //rgb to hex颜色转换
@@ -117,13 +108,42 @@ function componentToHex(c) {
   var hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
 }
-
 function rgbToHex(r, g, b) {
   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 </script>
 <script type="text/javascript" src="js/sketch.js"></script>
 <h1 id="first-text">距离中考还有</h1>
+<div>
+  <span id="day"></span><span id="hour"></span><span id="minute"></span><span id="second"></span></div>
+  <script type="text/javascript">
+  function countTime() {
+  //获取当前时间
+  var date = new Date() ;
+  var now = date.getTime() ;
+  //设置截止时间
+  var endDate = new Date("2023-06-15 00:00:00");
+  var end = endDate.getTime();
+  //获取截止时间和当前时间的时间差
+  var leftTime = end - now;
+  //定义变量 d,h,m，s分别保存天数，小时，分钟，秒
+  var d,h,m,s;
+  //判断剩余天数，时，分，秒
+  if(leftTime>=0) {
+  d = Math.floor(leftTime/1000/60/60/24);
+  h = Math.floor(leftTime/1000/60/60%24);
+  m = Math.floor(leftTime/1000/60%60);
+  s = Math.floor(leftTime/1000860);
+  }
+  //将时间赋值到div中
+  document.getElementById("day").innerHTML = d+"天";
+  document.getElementById("hour"). innerHTML = h+"时";
+  document.getElementById("minute").innerHTML = m+"分";
+  document.getElementById("second").innerHTML = s+"秒";
+  //递归每秒调用countTime方法，显示动态时问效果
+  setTimeout (countTime,1000);
+  }
+  </script>
 </body>
 </html>
 
